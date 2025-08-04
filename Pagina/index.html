@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Clasificación de Residuos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      margin-top: 30px;
+    }
+
+    video {
+      width: 400px;
+      border-radius: 10px;
+      border: 3px solid #333;
+    }
+
+    #resultado {
+      font-size: 20px;
+      margin-top: 20px;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Clasificación de Residuos</h1>
+  <video id="camara" autoplay muted playsinline></video>
+  <div id="resultado">Cargando modelo...</div>
+
+  <!-- Carga de librerías: primero TensorFlow, luego Teachable Machine -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.7.4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8.4"></script>
+
+  <!-- Tu código va DESPUÉS de cargar las librerías -->
+  <script>
+    const video = document.getElementById("camara");
+    const resultado = document.getElementById("resultado");
+    const URL = "./tm-my-image-model/";
+
+    let model, webcam, maxPredictions;
+
+    // Pedir permiso a la cámara
+    async function iniciarCamaraDirecta() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        video.srcObject = stream;
+        console.log("✅ Cámara activada");
+      } catch (error) {
+        console.error("❌ Error accediendo a la cámara: ", error);
+        resultado.innerText = "Error accediendo a la cámara: " + error.message;
+      }
+    }
+
+    // Cargar modelo de Teachable Machine y activar su webcam
+    async function cargarModelo() {
+      try {
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+
+        model = await tmImage.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
+        console.log("✅ Modelo cargado correctamente");
+
+        webcam = new tmImage.Webcam(400, 300, true);
+        await webcam.setup();
+        await webcam.play();
+        window.requestAnimationFrame(loop);
+
+        video.srcObject = webcam.webcam;
+      } catch (error) {
+        console.error("❌ Error cargando el modelo o la webcam TM: ", error);
+        resultado.innerText = "Error cargando el modelo: " + error.message;
+      }
+    }
+
+    async function loop() {
+      webcam.update();
+      await predecir();
+      window.requestAnimationFrame(loop);
+    }
+
+    async function predecir() {
+      const predicciones = await model.predict(webcam.canvas);
+      let texto = "";
+
+      for (let i = 0; i < predicciones.length; i++) {
+        const clase = predicciones[i].className;
+        const prob = (predicciones[i].probability * 100).toFixed(1);
+        texto += `${clase}: ${prob}%<br>`;
+      }
+
+      resultado.innerHTML = texto;
+    }
+
+    // Ejecutar todo
+    iniciarCamaraDirecta();  // Activa permisos
+    cargarModelo();          // Carga modelo TM
+  </script>
+
+</body>
+</html>
+
