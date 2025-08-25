@@ -60,7 +60,7 @@ Python interpreta la predicción del modelo.
 Envía un comando al Arduino por el puerto serie (COM5 en este caso).
 
 
-<img width="300" height="600" alt="image" src="https://github.com/user-attachments/assets/128feb0f-3301-42d3-8044-0266034c977b" />
+<img width="150" height="300" alt="image" src="https://github.com/user-attachments/assets/128feb0f-3301-42d3-8044-0266034c977b" />
 
 Movimiento mecánico (los servos)
 
@@ -69,6 +69,8 @@ Servo 1: mueve un tubo o conducto para direccionar la basura al contenedor adecu
 Servo 2: abre una compuerta para permitir que el residuo caiga en el lugar correcto.
 
 Al terminar, el sistema regresa a la posición inicial, listo para el próximo objeto.
+
+<img width="300" height="150" alt="image" src="https://github.com/user-attachments/assets/76588a8c-7f10-4f17-bfcb-66ad2ba40313" />
 
 
 🛠️ Componentes principales
