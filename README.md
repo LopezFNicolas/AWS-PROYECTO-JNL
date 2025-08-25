@@ -59,7 +59,9 @@ Python interpreta la predicción del modelo.
 
 Envía un comando al Arduino por el puerto serie (COM5 en este caso).
 
-<img width="472" height="350" alt="image" src="blob:https://web.whatsapp.com/140370c7-03c3-4a4e-ac11-f11ab5bad488" />
+
+<img width="899" height="1599" alt="image" src="https://github.com/user-attachments/assets/128feb0f-3301-42d3-8044-0266034c977b" />
+
 Movimiento mecánico (los servos)
 
 Servo 1: mueve un tubo o conducto para direccionar la basura al contenedor adecuado.
