@@ -18,7 +18,7 @@
 ## 🎯 Objetivo del Proyecto
 
 Explica brevemente el propósito general: Desarrollar un sistema de basura inteligente que utilice inteligencia artificial y cámaras para clasificar automáticamente 
-los desechos en 3 categorías: reutilizables, orgánicos y desechables, con el propósito de mejorar la gestión de residuos y fomentar la cultura del reciclaje en el 
+los desechos en 3 categorías: papel, orgánicos y plastico, con el propósito de mejorar la gestión de residuos y fomentar la cultura del reciclaje en el 
 entorno escolar.
 
 ---
@@ -36,28 +36,55 @@ entorno escolar.
 
 ---
 
-## 🧰 Tecnologías Utilizadas
+## 🧰 ¿Cómo funciona?
 
-**Idiomas:**
+El proyecto combina software (IA con Teachable Machine y Python) con hardware (Arduino y servomotores):
 
-- Arduino
+Captura de imagen
 
-- Python
+Una cámara web toma una foto del objeto que el usuario quiere desechar.
 
-**Programas:**
 
-- Visual Studio
+Clasificación con IA
 
-- Arduino
+El modelo entrenado en Teachable Machine analiza la imagen.
 
-**Base de datos:**
+Detecta si el residuo es plástico, vidrio, papel, orgánico, etc.
 
-- Techeable machine
 
-**Otras herramientas:**
 
-- Tinkercad
+Comunicación con Arduino
 
----
+Python interpreta la predicción del modelo.
+
+Envía un comando al Arduino por el puerto serie (COM5 en este caso).
+
+<img width="472" height="350" alt="image" src="blob:https://web.whatsapp.com/140370c7-03c3-4a4e-ac11-f11ab5bad488" />
+Movimiento mecánico (los servos)
+
+Servo 1: mueve un tubo o conducto para direccionar la basura al contenedor adecuado.
+
+Servo 2: abre una compuerta para permitir que el residuo caiga en el lugar correcto.
+
+Al terminar, el sistema regresa a la posición inicial, listo para el próximo objeto.
+
+
+🛠️ Componentes principales
+
+Software:
+
+Teachable Machine (Google) → para entrenar el modelo de clasificación de imágenes.
+
+Python (con TensorFlow y OpenCV) → para ejecutar el modelo en tiempo real.
+
+Comunicación Serial → conecta Python con Arduino.
+
+Hardware:
+
+Arduino UNO (o compatible).
+
+2 servomotores (uno para el tubo direccionador, otro para la compuerta).
+
+Cámara web.
 
 ### Pasos
