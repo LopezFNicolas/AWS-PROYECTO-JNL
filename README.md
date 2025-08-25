@@ -45,7 +45,7 @@ Captura de imagen
 Una cámara web toma una foto del objeto que el usuario quiere desechar.
 
 
-Clasificación con IA
+👾Clasificación con IA
 
 El modelo entrenado en Teachable Machine analiza la imagen.
 
@@ -53,7 +53,7 @@ Detecta si el residuo es plástico, vidrio, papel, orgánico, etc.
 
 
 
-Comunicación con Arduino
+📡Comunicación con Arduino
 
 Python interpreta la predicción del modelo.
 
@@ -62,7 +62,7 @@ Envía un comando al Arduino por el puerto serie (COM5 en este caso).
 
 <img width="150" height="300" alt="image" src="https://github.com/user-attachments/assets/128feb0f-3301-42d3-8044-0266034c977b" />
 
-Movimiento mecánico (los servos)
+⚙️Movimiento mecánico (los servos)
 
 Servo 1: mueve un tubo o conducto para direccionar la basura al contenedor adecuado.
 
