@@ -60,7 +60,7 @@ Python interpreta la predicción del modelo.
 Envía un comando al Arduino por el puerto serie (COM5 en este caso).
 
 
-<img width="899" height="1599" alt="image" src="https://github.com/user-attachments/assets/128feb0f-3301-42d3-8044-0266034c977b" />
+<img width="300" height="600" alt="image" src="https://github.com/user-attachments/assets/128feb0f-3301-42d3-8044-0266034c977b" />
 
 Movimiento mecánico (los servos)
 
