@@ -87,4 +87,3 @@ Arduino UNO (o compatible).
 
 Cámara web.
 
-### Pasos
