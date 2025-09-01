@@ -25,9 +25,10 @@ entorno escolar.
 
 ## 🧪 Prototipo
 
-| Diseño guia | Primer diseño de proyecto | Diseño final |
-|--------------------|------------------|-------------|
-|<img width="248" height="545" alt="image" src="https://github.com/user-attachments/assets/3596bbaa-7069-4da0-a7b5-26698745bf38" />| <img width="276" height="490" alt="image" src="https://github.com/user-attachments/assets/787625d2-3538-4829-b492-1ef7ce6efd3e" />| <img width="437" height="476" alt="image" src="https://github.com/user-attachments/assets/07e9cae7-7005-4398-880d-233b72bf073b" /> |
+| Diseño guia | Primer diseño de proyecto | segundo diseño  |Diseño final |
+|--------------------|------------------|-------------|-------------|
+|<img width="248" height="545" alt="image" src="https://github.com/user-attachments/assets/3596bbaa-7069-4da0-a7b5-26698745bf38" />| <img width="276" height="490" alt="image" src="https://github.com/user-attachments/assets/787625d2-3538-4829-b492-1ef7ce6efd3e" />| <img width="437" height="476" alt="image" src="https://github.com/user-attachments/assets/07e9cae7-7005-4398-880d-233b72bf073b" /> |<img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/1c7ecc4d-224f-49fe-8f33-d346f05e8341" />
+|
 
 ---
 
